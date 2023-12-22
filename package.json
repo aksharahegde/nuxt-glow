@@ -1,0 +1,54 @@
+{
+  "name": "@akshara/nuxt-glow",
+  "version": "1.0.0",
+  "description": "Add a mouse-tracing glow effect to Nuxt components",
+  "author": "Akshara Hegde",
+  "repository": "your-org/my-module",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/types.d.ts",
+      "import": "./dist/module.mjs",
+      "require": "./dist/module.cjs"
+    }
+  },
+  "main": "./dist/module.cjs",
+  "types": "./dist/types.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "keywords": [
+    "nuxt",
+    "nuxt-module",
+    "glow"
+  ],
+  "scripts": {
+    "prepack": "nuxt-module-build build",
+    "dev": "nuxi dev playground",
+    "dev:build": "nuxi build playground",
+    "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
+    "release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:watch": "vitest watch"
+  },
+  "dependencies": {
+    "@nuxt/kit": "^3.8.2"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "latest",
+    "@nuxt/eslint-config": "^0.2.0",
+    "@nuxt/module-builder": "^0.5.4",
+    "@nuxt/schema": "^3.8.2",
+    "@nuxt/test-utils": "^3.8.1",
+    "@nuxtjs/tailwindcss": "^6.10.1",
+    "@types/node": "^20.10.3",
+    "changelogen": "^0.5.5",
+    "eslint": "^8.55.0",
+    "nuxt": "^3.8.2",
+    "tailwindcss": "^3.4.0",
+    "vitest": "^0.33.0"
+  }
+}
