@@ -1,7 +1,7 @@
 <template>
   <section class="h-screen w-full bg-gray-900 flex justify-center items-center">
     <GlowCapture :size="500">
-      <Glow color="#00DC82">
+      <GlowElement color="#00DC82">
         <div
           class="glow:ring-1 glow:border-glow glow:ring-glow glow:bg-glow/[.15] border-4 border-gray-400 rounded-lg"
         >
@@ -39,11 +39,11 @@
               <img
                 class="h-[350px] object-cover object-left"
                 src="https://i.ibb.co/mBg1WBp/kindpng-6728540.png"
-              />
+              >
             </div>
           </div>
         </div>
-      </Glow>
+      </GlowElement>
     </GlowCapture>
   </section>
 </template>

@@ -11,7 +11,7 @@ export default defineNuxtModule<ModuleOptions>({
     },
   },
   defaults: {},
-  async setup(options, nuxt) {
+  async setup() {
     const resolver = createResolver(import.meta.url);
 
     await installModule('@nuxtjs/tailwindcss', {
@@ -33,8 +33,8 @@ export default defineNuxtModule<ModuleOptions>({
       global: true
     });
     addComponent({
-      name: "Glow",
-      filePath: resolver.resolve("runtime/components/Glow.vue"),
+      name: "GlowElement",
+      filePath: resolver.resolve("runtime/components/GlowElement.vue"),
       global: true
     });
   },

@@ -6,7 +6,7 @@
     :style="{ position: 'relative', '--glow-size': size + 'px' }"
     v-bind="rest"
   >
-    <slot></slot>
+    <slot />
   </div>
 </template>
 
@@ -28,7 +28,7 @@ export default {
       default: () => ({}),
     },
   },
-  setup(props, { emit }) {
+  setup() {
     const elementParent = ref(null);
 
     const move = (e) => {

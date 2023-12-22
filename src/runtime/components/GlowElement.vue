@@ -1,11 +1,11 @@
 <template>
-  <div ref="element" class="glow grid">
+  <div ref="element" class="grid glow">
     <div
       :class="className"
       :style="{ ...style, gridArea: '1/1/1/1' }"
       v-bind="rest"
     >
-      <slot></slot>
+      <slot />
     </div>
     <div
       class="glow-mask"
@@ -21,7 +21,7 @@
       }"
       v-bind="rest"
     >
-      <slot></slot>
+      <slot />
     </div>
   </div>
 </template>
@@ -52,7 +52,7 @@ export default {
       default: () => ({}),
     },
   },
-  setup(props, { emit }) {
+  setup(props) {
     const element = ref(null);
 
     const mask = computed(() => {
@@ -63,31 +63,23 @@ export default {
     });
 
     onMounted(() => {
-      element.value.style.setProperty(
-        "--glow-top",
-        `${element.value.offsetTop}px`
-      );
-      element.value.style.setProperty(
-        "--glow-left",
-        `${element.value.offsetLeft}px`
-      );
-    });
-
-    onMounted(() => {
+      const elem: any = element.value;
+      elem.style.setProperty("--glow-top", `${elem.offsetTop}px`);
+      elem.style.setProperty("--glow-left", `${elem.offsetLeft}px`);
       const observer = new ResizeObserver(() => {
         requestAnimationFrame(() => {
-          element.value.style.setProperty(
+          elem.style.setProperty(
             "--glow-top",
-            `${element.value.offsetTop}px`
+            `${elem.offsetTop}px`
           );
-          element.value.style.setProperty(
+          elem.style.setProperty(
             "--glow-left",
-            `${element.value.offsetLeft}px`
+            `${elem.offsetLeft}px`
           );
         });
       });
 
-      const capture = element.value.closest(".glow-capture");
+      const capture = elem.closest(".glow-capture");
       if (capture) observer.observe(capture);
 
       onUnmounted(() => observer.disconnect());
