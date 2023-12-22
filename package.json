@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Add a mouse-tracing glow effect to Nuxt components",
   "author": "Akshara Hegde",
-  "repository": "your-org/my-module",
+  "repository": "aksharahegde/nuxt-glow",
   "license": "MIT",
   "type": "module",
   "exports": {
