@@ -1,6 +1,6 @@
 {
   "name": "@aksharahegde/nuxt-glow",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "description": "Add a mouse-tracing glow effect to Nuxt components",
   "author": "Akshara Hegde",
   "repository": "aksharahegde/nuxt-glow",
@@ -12,7 +12,7 @@
       "import": "./dist/module.mjs",
       "require": "./dist/module.cjs"
     },
-    "./tailwind": "./src/tailwind.js"
+    "./tailwind": "./src/runtime/tailwind.js"
   },
   "main": "./dist/module.cjs",
   "types": "./dist/types.d.ts",
