@@ -1,5 +1,8 @@
 <template>
-  <div ref="element" class="grid glow">
+  <div
+    ref="element"
+    class="grid glow"
+  >
     <div
       :class="className"
       :style="{ ...style, gridArea: '1/1/1/1' }"

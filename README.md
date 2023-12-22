@@ -12,16 +12,16 @@ Add a mouse-tracing glow effect to Nuxt components.
 Install the package using your favorite package manager:
 
 ```shell
-pnpm i @akshara/nuxt-glow
+pnpm i @aksharahegde/nuxt-glow
 ```
 
 ## Usage
 
-1. Add the `@akshara/nuxt-glow` plugin to your `nuxt.config.ts`
+1. Add the `@aksharahegde/nuxt-glow` plugin to your `nuxt.config.ts`
 
 ```js
 export default defineNuxtConfig({
-  modules: ["@akshara/nuxt-glow"],
+  modules: ["@aksharahegde/nuxt-glow"],
 });
 ```
 
