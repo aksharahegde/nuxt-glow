@@ -11,7 +11,8 @@
       "types": "./dist/types.d.ts",
       "import": "./dist/module.mjs",
       "require": "./dist/module.cjs"
-    }
+    },
+    "./tailwind": "./src/tailwind.js"
   },
   "main": "./dist/module.cjs",
   "types": "./dist/types.d.ts",
