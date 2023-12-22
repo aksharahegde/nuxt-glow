@@ -20,22 +20,22 @@ export default defineNuxtConfig({
 });
 ```
 
-2. Wrap any number of `<Glow>` components in a `<GlowCapture>` which will be used to track the mouse location.
+2. Wrap any number of `<GlowElement>` components in a `<GlowCapture>` which will be used to track the mouse location.
 
 ```html
 <template>
   <GlowCapture>
     <span>This won't glow</span>
-    <Glow color="purple">
+    <GlowElement color="purple">
       <p class="text-black glow:text-glow/50 glow:bg-red-100">
         This will glow purple when the mouse is passed over
       </p>
-    </Glow>
+    </GlowElement>
   </GlowCapture>
 </template>
 ```
 
-Children of `<Glow>` can style themselves how to look when glowing. You might choose to leave some children unchanged, or highlight them with the `glow:` variant style.
+Children of `<GlowElement>` can style themselves how to look when glowing. You might choose to leave some children unchanged, or highlight them with the `glow:` variant style.
 
 The value of `color` will be available as a CSS variable `--glow-color`, as well as the Tailwind `glow` color. 
 You can pass any valid CSS color, including `hsl()` values etc.
@@ -49,7 +49,7 @@ Add the tailwind plugin to unlock the `glow:` variant and `glow` color
 module.exports = {
   ...
   plugins: [
-    require('@codaworks/react-glow/tailwind')
+    require('@aksharahegde/nuxt-glow/tailwind')
   ]
 }
 ```
