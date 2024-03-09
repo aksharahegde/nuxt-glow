@@ -51,6 +51,9 @@ export default {
     });
 
     onUnmounted(() => {
+      if (!elementParent.value) {
+        return;
+      }
       elementParent.value.removeEventListener("pointermove", move);
       elementParent.value.removeEventListener("pointerleave", leave);
     });
