@@ -1,11 +1,11 @@
 <template>
-  <section class="h-screen w-full bg-gray-900 flex justify-center items-center">
+  <section class="flex justify-center items-center w-full h-screen bg-gray-900">
     <GlowCapture :size="500">
       <GlowElement color="#00DC82">
         <div
           class="glow:ring-1 glow:border-glow glow:ring-glow glow:bg-glow/[.15] border-4 border-gray-400 rounded-lg"
         >
-          <div class="grid place-items-center grid-cols-6 gap-2">
+          <div class="grid grid-cols-6 gap-2 place-items-center">
             <div class="col-span-3 p-8">
               <h2
                 class="font-bold text-2xl mb-4 text-gray-200 glow:text-glow/[.8]"
@@ -16,7 +16,7 @@
                 Vitae ducimus harum earum ratione autem esse ea!
               </p>
               <button
-                class="border mt-10 whitespace-nowrap border-border px-10 py-3 bg-gray-800 items-center hover:text-text-primary transition-colors rounded-xl mb-5 flex gap-3 text-gray-200 glow:text-glow glow:border-glow glow:ring glow:ring-glow"
+                class="flex gap-3 items-center px-10 py-3 mt-10 mb-5 text-gray-200 whitespace-nowrap bg-gray-800 rounded-xl border transition-colors border-border hover:text-text-primary glow:text-glow glow:border-glow glow:ring glow:ring-glow"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
