@@ -1,11 +1,10 @@
+[![Peerlist Launch Badge](/images/peerlist_launch_badge.svg)](https://peerlist.io/scroll/post/ACTHP69GO9R69MPO7H6BPR69KJDKRG)
+
 # Nuxt Glow
 
 Add a mouse-tracing glow effect to Nuxt components.
 
 Demo: https://vueglow-demo.vercel.app/
-
-[Peerlist Launch Badge](https://github.com/aksharahegde/nuxt-glow/images/peerlist_launch_badge.svg)
-
 Plugin for Vue 3 also available: [Vue Glow](https://github.com/aksharahegde/vue-glow)
 
 
