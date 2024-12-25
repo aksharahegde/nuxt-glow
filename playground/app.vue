@@ -1,5 +1,5 @@
 <template>
-  <section class="flex justify-center items-center w-full h-screen bg-gray-900">
+  <section class="flex justify-center items-center w-full h-screen bg-gray-900 max-w-7xl mx-auto px-4 py-10">
     <GlowCapture :size="500">
       <GlowElement color="#00DC82">
         <div
@@ -13,7 +13,7 @@
                 Chicken Shawarma &amp; Veggies
               </h2>
               <p class="text-sm text-gray-300 glow:text-glow">
-                Vitae ducimus harum earum ratione autem esse ea!
+                Chicken Shawarma & Veggies is a delicious and nutritious meal that combines the flavors of chicken shawarma with a variety of fresh vegetables. It's a great option for a healthy and satisfying lunch or dinner.
               </p>
               <button
                 class="flex gap-3 items-center px-10 py-3 mt-10 mb-5 text-gray-200 whitespace-nowrap bg-gray-800 rounded-xl border transition-colors border-border hover:text-text-primary glow:text-glow glow:border-glow glow:ring glow:ring-glow"
