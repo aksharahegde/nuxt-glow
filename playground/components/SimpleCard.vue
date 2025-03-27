@@ -2,13 +2,11 @@
   <GlowCapture :size="400">
     <section class="flex justify-center items-center w-full">
       <GlowElement color="#00DC82">
-        <div
-          class="glow:ring-1 glow:border-glow glow:ring-glow glow:bg-glow/[.15] border-4 border-gray-400 rounded-lg"
-        >
-          <div class="grid grid-cols-6 gap-2 place-items-center">
-            <div class="col-span-3 p-8">
+        <div class="glow:ring-1 glow:border-glow glow:ring-glow glow:bg-glow/[.15] border-4 border-gray-400 rounded-lg max-w-4xl mx-auto">
+          <div class="grid grid-cols-1 md:grid-cols-6 gap-4 place-items-center">
+            <div class="col-span-full md:col-span-3 p-4 md:p-8">
               <h2
-                class="font-bold text-2xl mb-4 text-gray-200 glow:text-glow/[.8]"
+                class="font-bold text-xl md:text-2xl mb-4 text-gray-200 glow:text-glow/[.8]"
               >
                 Chicken Shawarma &amp; Veggies
               </h2>
@@ -19,7 +17,7 @@
                 satisfying lunch or dinner.
               </p>
               <button
-                class="flex gap-3 items-center px-10 py-3 mt-10 mb-5 text-gray-200 whitespace-nowrap bg-gray-800 rounded-xl border transition-colors border-border hover:text-text-primary glow:text-glow glow:border-glow glow:ring glow:ring-glow"
+                class="flex gap-3 items-center px-6 md:px-10 py-3 mt-6 md:mt-10 mb-5 text-gray-200 whitespace-nowrap bg-gray-800 rounded-xl border transition-colors border-border hover:text-text-primary glow:text-glow glow:border-glow glow:ring glow:ring-glow"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -38,9 +36,9 @@
                 <span>Add to cart</span>
               </button>
             </div>
-            <div class="col-span-3 -mt-5 -mb-10">
+            <div class="col-span-full md:col-span-3 mt-0 md:-mt-5 -mb-10">
               <img
-                class="h-[350px] object-cover object-left"
+                class="h-[250px] md:h-[350px] w-full object-contain md:object-cover md:object-left"
                 src="https://i.ibb.co/mBg1WBp/kindpng-6728540.png"
               />
             </div>
