@@ -1,12 +1,9 @@
-<!-- components/GlowCapture.vue -->
 <template>
   <div
-    ref="capture"
+    ref="elementParent"
     class="glow-capture"
     :class="className"
-    :style="{ '--glow-size': `${size}px` }"
-    @pointermove="handleMove"
-    @pointerleave="handleLeave"
+    :style="{ position: 'relative', '--glow-size': size + 'px' }"
     v-bind="rest"
   >
     <slot />
@@ -14,37 +11,47 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
-
 defineProps({
-  className: { type: String, default: '' },
-  size: { type: Number, default: 400 },
-  rest: { type: Object, default: () => ({}) },
+  className: {
+    type: String,
+    default: "",
+  },
+  size: {
+    type: Number,
+    default: 400,
+  },
+  rest: {
+    type: Object,
+    default: () => ({}),
+  },
 });
 
-const capture = ref<HTMLElement | null>(null);
+const elementParent = ref<HTMLElement | null>(null);
 
-const handleMove = (e: PointerEvent) => {
-  if (e.pointerType === 'mouse' && capture.value) {
+const move = (e: PointerEvent) => {
+  if (e.pointerType === "mouse") {
     requestAnimationFrame(() => {
-      capture.value?.style.setProperty('--glow-x', `${e.layerX}px`);
-      capture.value?.style.setProperty('--glow-y', `${e.layerY}px`);
+      elementParent.value?.style.setProperty("--glow-x", `${e.layerX}px`);
+      elementParent.value?.style.setProperty("--glow-y", `${e.layerY}px`);
     });
   }
 };
 
-const handleLeave = () => {
-  if (capture.value) {
-    requestAnimationFrame(() => {
-      capture.value?.style.setProperty('--glow-x', '-99999px');
-      capture.value?.style.setProperty('--glow-y', '-99999px');
-    });
-  }
+const leave = () => {
+  if (!elementParent.value) return;
+  elementParent.value.style.removeProperty("--glow-x");
+  elementParent.value.style.removeProperty("--glow-y");
 };
+
+onMounted(() => {
+  if (!elementParent.value) return;
+  elementParent.value.addEventListener("pointermove", move, { passive: true });
+  elementParent.value.addEventListener("pointerleave", leave, { passive: true });
+});
+
+onUnmounted(() => {
+  if (!elementParent.value) return;
+  elementParent.value.removeEventListener("pointermove", move);
+  elementParent.value.removeEventListener("pointerleave", leave);
+});
 </script>
-
-<style scoped>
-.glow-capture {
-  position: relative;
-}
-</style>
