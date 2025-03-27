@@ -1,8 +1,6 @@
 <template>
-  <section
-    class="flex justify-center items-center w-full"
-  >
-    <GlowCapture :size="500">
+  <GlowCapture :size="400">
+    <section class="flex justify-center items-center w-full">
       <GlowElement color="#00DC82">
         <div
           class="glow:ring-1 glow:border-glow glow:ring-glow glow:bg-glow/[.15] border-4 border-gray-400 rounded-lg"
@@ -49,6 +47,6 @@
           </div>
         </div>
       </GlowElement>
-    </GlowCapture>
-  </section>
+    </section>
+  </GlowCapture>
 </template>

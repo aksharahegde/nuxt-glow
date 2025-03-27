@@ -1,26 +1,24 @@
+<!-- components/Glow.vue -->
 <template>
   <div
     ref="element"
-    class="grid glow"
+    class="glow"
+    :class="className"
+    :style="{ display: 'grid' }"
   >
     <div
-      :class="className"
-      :style="{ ...style, gridArea: '1/1/1/1' }"
+      :style="{ gridArea: '1/1/1/1', ...style }"
       v-bind="rest"
     >
       <slot />
     </div>
     <div
-      class="glow-mask"
-      :class="className"
-      :glow="true"
+      glow
+      class="glow-mask glow:bg-glow/[.15]"
       :style="{
-        ...style,
         '--glow-color': color,
         gridArea: '1/1/1/1',
         pointerEvents: 'none',
-        mask: debug ? undefined : mask,
-        WebkitMask: debug ? undefined : mask,
       }"
       v-bind="rest"
     >
@@ -30,61 +28,57 @@
 </template>
 
 <script setup lang="ts">
-const props = defineProps({
-  className: {
-    type: String,
-    default: "",
-  },
-  style: {
-    type: Object,
-    default: () => ({}),
-  },
-  color: {
-    type: String,
-    default: "#f50057",
-  },
-  debug: {
-    type: Boolean,
-    default: false,
-  },
-  rest: {
-    type: Object,
-    default: () => ({}),
-  },
+import { ref, onMounted, onUnmounted } from 'vue';
+
+defineProps({
+  className: { type: String, default: '' },
+  style: { type: Object, default: () => ({}) },
+  color: { type: String, default: '#f50057' },
+  rest: { type: Object, default: () => ({}) },
 });
 
 const element = ref<HTMLElement | null>(null);
 
-const mask = computed(() => {
-  return `
-    radial-gradient(var(--glow-size) var(--glow-size) at calc(var(--glow-x, -99999px) - var(--glow-left, 0px))
-    calc(var(--glow-y, -99999px) - var(--glow-top, 0px)), ${props.color} 1%, transparent 50%)
-  `;
-});
-
 onMounted(() => {
-  const elem = element.value;
-  if (!elem) return;
-  
-  elem.style.setProperty("--glow-top", `${elem.offsetTop}px`);
-  elem.style.setProperty("--glow-left", `${elem.offsetLeft}px`);
-  
-  const observer = new ResizeObserver(() => {
-    requestAnimationFrame(() => {
-      elem.style.setProperty(
-        "--glow-top",
-        `${elem.offsetTop}px`
-      );
-      elem.style.setProperty(
-        "--glow-left",
-        `${elem.offsetLeft}px`
-      );
-    });
+  const updatePosition = () => {
+    if (element.value) {
+      element.value.style.setProperty('--glow-top', `${element.value.offsetTop}px`);
+      element.value.style.setProperty('--glow-left', `${element.value.offsetLeft}px`);
+    }
+  };
+
+  updatePosition(); // Initial position
+
+  const resizeObserver = new ResizeObserver(() => {
+    requestAnimationFrame(updatePosition);
   });
 
-  const capture = elem.closest(".glow-capture");
-  if (capture) observer.observe(capture);
+  if (element.value?.parentElement) {
+    resizeObserver.observe(element.value.parentElement);
+  }
 
-  onUnmounted(() => observer.disconnect());
+  onUnmounted(() => resizeObserver.disconnect());
 });
 </script>
+
+<style scoped>
+.glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.glow-mask {
+  mask: radial-gradient(
+    var(--glow-size) var(--glow-size) at 
+    calc(var(--glow-x, -99999px) - var(--glow-left, 0px)) 
+    calc(var(--glow-y, -99999px) - var(--glow-top, 0px)), 
+    #000000 1%, transparent 50%
+  );
+  -webkit-mask: radial-gradient(
+    var(--glow-size) var(--glow-size) at 
+    calc(var(--glow-x, -99999px) - var(--glow-left, 0px)) 
+    calc(var(--glow-y, -99999px) - var(--glow-top, 0px)), 
+    #000000 1%, transparent 50%
+  );
+}
+</style>
