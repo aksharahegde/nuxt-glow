@@ -1,7 +1,17 @@
 export default defineNuxtConfig({
-  modules: ['../src/module'],
+  modules: ['../src/module', '@nuxt/content', '@nuxtjs/tailwindcss'],
   devtools: { enabled: true },
   compatibilityDate: '2024-12-25',
+  content: {
+    markdown: {
+      highlight: {
+        theme: 'monokai',
+      },
+      toc: {
+        depth: 3,
+      },
+    },
+  },
   app: {
     head: {
       meta: [
