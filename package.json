@@ -32,7 +32,14 @@
   "keywords": [
     "nuxt",
     "nuxt-module",
-    "glow"
+    "glow",
+    "glow-effect",
+    "glow-ui",
+    "glow-animation",
+    "glow-component",
+    "glow-module",
+    "glow-plugin",
+    "glow-effect"
   ],
   "scripts": {
     "prepack": "nuxt-module-build build",
