@@ -1,9 +1,9 @@
 <template>
   <div
     ref="elementParent"
-    class="glow-capture"
+    class="glow-capture relative"
     :class="className"
-    :style="{ position: 'relative', '--glow-size': size + 'px' }"
+    :style="{ '--glow-size': size + 'px' }"
     v-bind="rest"
   >
     <slot />
