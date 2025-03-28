@@ -7,7 +7,7 @@
         "@nuxt/content": "^3.4.0",
       },
       "devDependencies": {
-        "@nuxtjs/tailwindcss": "^6.10.1",
+        "@nuxtjs/tailwindcss": "^6.13.2",
         "@tailwindcss/typography": "^0.5.16",
         "nuxt": "latest",
       },
