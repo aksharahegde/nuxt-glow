@@ -3,12 +3,11 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   compatibilityDate: '2024-12-25',
   content: {
-    markdown: {
-      highlight: {
-        theme: 'monokai',
-      },
-      toc: {
-        depth: 3,
+    build: {
+      markdown: {
+        highlight: {
+          theme: 'monokai',
+        },
       },
     },
   },
