@@ -1,6 +1,10 @@
 # Changelog
 
 
+## v1.1.4
+
+[compare changes](https://github.com/aksharahegde/nuxt-glow/compare/v1.1.3...v1.1.4)
+
 ## v1.1.1
 
 [compare changes](https://github.com/aksharahegde/nuxt-glow/compare/v1.0.3...v1.1.1)
