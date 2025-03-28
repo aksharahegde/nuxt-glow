@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "my-module-playground",
+  "name": "nuxt-glow-playground",
   "type": "module",
   "scripts": {
     "dev": "nuxi dev",
@@ -8,7 +8,11 @@
     "generate": "nuxi generate"
   },
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "^6.10.1",
+    "@nuxtjs/tailwindcss": "^6.13.2",
+    "@tailwindcss/typography": "^0.5.16",
     "nuxt": "latest"
+  },
+  "dependencies": {
+    "@nuxt/content": "^3.4.0"
   }
 }

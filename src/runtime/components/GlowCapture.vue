@@ -1,66 +1,57 @@
 <template>
   <div
     ref="elementParent"
-    class="glow-capture"
+    class="glow-capture relative"
     :class="className"
-    :style="{ position: 'relative', '--glow-size': size + 'px' }"
+    :style="{ '--glow-size': size + 'px' }"
     v-bind="rest"
   >
     <slot />
   </div>
 </template>
 
-<script>
-import { ref, onMounted, onUnmounted } from "vue";
-
-export default {
-  props: {
-    className: {
-      type: String,
-      default: "",
-    },
-    size: {
-      type: Number,
-      default: 400,
-    },
-    rest: {
-      type: Object,
-      default: () => ({}),
-    },
+<script setup lang="ts">
+defineProps({
+  className: {
+    type: String,
+    default: "",
   },
-  setup() {
-    const elementParent = ref(null);
-
-    const move = (e) => {
-      if (e.pointerType === "mouse") {
-        requestAnimationFrame(() => {
-          elementParent.value.style.setProperty("--glow-x", `${e.layerX}px`);
-          elementParent.value.style.setProperty("--glow-y", `${e.layerY}px`);
-        });
-      }
-    };
-
-    const leave = () => {
-      elementParent.value.style.removeProperty("--glow-x");
-      elementParent.value.style.removeProperty("--glow-y");
-    };
-
-    onMounted(() => {
-      elementParent.value.addEventListener("pointermove", move, { passive: true });
-      elementParent.value.addEventListener("pointerleave", leave, { passive: true });
-    });
-
-    onUnmounted(() => {
-      if (!elementParent.value) {
-        return;
-      }
-      elementParent.value.removeEventListener("pointermove", move);
-      elementParent.value.removeEventListener("pointerleave", leave);
-    });
-
-    return {
-      elementParent,
-    };
+  size: {
+    type: Number,
+    default: 400,
   },
+  rest: {
+    type: Object,
+    default: () => ({}),
+  },
+});
+
+const elementParent = ref<HTMLElement | null>(null);
+
+const move = (e: PointerEvent) => {
+  if (e.pointerType === "mouse") {
+    requestAnimationFrame(() => {
+      elementParent.value?.style.setProperty("--glow-x", `${e.layerX}px`);
+      elementParent.value?.style.setProperty("--glow-y", `${e.layerY}px`);
+    });
+  }
 };
+
+const leave = () => {
+  if (!elementParent.value) return;
+  elementParent.value.style.removeProperty("--glow-x");
+  elementParent.value.style.removeProperty("--glow-y");
+};
+
+onMounted(() => {
+  if (!elementParent.value) return;
+  elementParent.value.addEventListener("pointermove", move, { passive: true });
+  elementParent.value.addEventListener("pointerleave", leave, { passive: true });
+});
+
+onUnmounted(() => {
+  if (!elementParent.value) return;
+  elementParent.value.removeEventListener("pointermove", move);
+  elementParent.value.removeEventListener("pointerleave", leave);
+});
 </script>
