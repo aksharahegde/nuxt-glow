@@ -201,8 +201,9 @@ Enable debug mode to visualize the glow mask:
 
 1. Always wrap `GlowElement` components inside a `GlowCapture`
 2. Use the `glow:` variant for styling elements during the glow effect
-3. Consider using CSS variables for consistent theming
-4. Use debug mode during development to fine-tune the glow effect
+3. Add padding to the parent element to ensure the glow effect is visible
+4. Consider using CSS variables for consistent theming
+5. Use debug mode during development to fine-tune the glow effect
 
 ## Browser Support
 
@@ -219,3 +220,29 @@ The module is optimized for performance using:
 - Passive event listeners
 - Efficient CSS masking
 - Minimal DOM updates
+
+## Additional Information
+
+Plugin for Vue 3 also available: [Vue Glow](https://github.com/aksharahegde/vue-glow)
+
+You can check downloads on [NPM Chart](https://npm.chart.dev/@aksharahegde/nuxt-glow?primary=green&gray=cool&theme=dark).
+
+## Contributing 🙏
+
+Contributions are welcome! Feel free to submit issues and pull requests.
+
+## Contributing 🙏
+
+1. Clone this repository
+2. Install dependencies using `pnpm install`
+3. Run `npm run dev:prepare` to generate type stubs.
+4. Use `npm run dev` to start [playground](https://github.com/nuxt-modules/icon/tree/main/playground) in development mode.
+5. Once development is complete, create PR to this repository.
+
+## Attribution
+- Module is inspired by [React Glow](https://github.com/codaworks/react-glow) by [Codaworks](https://github.com/codaworks)
+- Playground card is version of https://codepen.io/_rahul/pen/MWrozMX by [rahul](https://codepen.io/_rahul)
+
+## License
+
+MIT
