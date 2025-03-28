@@ -8,6 +8,7 @@
     "generate": "nuxi generate"
   },
   "devDependencies": {
+    "@nuxthub/core": "0.8.21",
     "@nuxtjs/tailwindcss": "^6.13.2",
     "@tailwindcss/typography": "^0.5.16",
     "nuxt": "latest"
