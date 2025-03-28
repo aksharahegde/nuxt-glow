@@ -2,7 +2,11 @@
   <section class="flex justify-center items-center w-full p-10">
     <GlowCapture :size="400">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
-        <GlowElement v-for="feature in features" :key="feature.title" :color="feature.color">
+        <GlowElement
+          v-for="feature in features"
+          :key="feature.title"
+          :color="feature.color"
+        >
           <div
             class="h-full glow:ring-1 glow:border-glow glow:ring-glow glow:bg-glow/[.15] border-2 border-gray-700 rounded-xl p-6"
           >

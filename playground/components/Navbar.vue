@@ -4,7 +4,10 @@
       <div class="flex justify-between h-16">
         <!-- Logo -->
         <div class="flex-shrink-0 flex items-center">
-          <NuxtLink to="/" class="flex items-center text-white logo">
+          <NuxtLink
+            to="/"
+            class="flex items-center text-white logo"
+          >
             <svg
               fill="currentColor"
               class="h-8 w-auto cursor-pointer"
@@ -37,8 +40,8 @@
         <!-- Mobile menu button -->
         <div class="flex items-center sm:hidden">
           <button
-            @click="isOpen = !isOpen"
             class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+            @click="isOpen = !isOpen"
           >
             <span class="sr-only">Open main menu</span>
             <!-- Menu icon -->
@@ -79,7 +82,10 @@
     </div>
 
     <!-- Mobile menu -->
-    <div class="sm:hidden" :class="{ block: isOpen, hidden: !isOpen }">
+    <div
+      class="sm:hidden"
+      :class="{ block: isOpen, hidden: !isOpen }"
+    >
       <div class="pt-2 pb-3 space-y-1">
         <NuxtLink
           to="/"

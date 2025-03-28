@@ -11,7 +11,7 @@
                 class="w-16 h-16 rounded-full object-cover border-2 border-gray-700 glow:border-glow"
                 src="https://i.pravatar.cc/150?img=12"
                 alt="Testimonial"
-              />
+              >
             </div>
             <div class="flex-grow">
               <div class="flex items-center gap-2 mb-4">

@@ -40,7 +40,7 @@
               <img
                 class="h-[250px] md:h-[350px] w-full object-contain md:object-cover md:object-left"
                 src="https://i.ibb.co/mBg1WBp/kindpng-6728540.png"
-              />
+              >
             </div>
           </div>
         </div>

@@ -6,22 +6,30 @@
 
     <div class="w-full space-y-16">
       <div class="space-y-4">
-        <h2 class="text-2xl font-bold text-white text-center">Product Card</h2>
+        <h2 class="text-2xl font-bold text-white text-center">
+          Product Card
+        </h2>
         <ExampleSimpleCard />
       </div>
 
       <div class="space-y-4">
-        <h2 class="text-2xl font-bold text-white text-center">Profile Card</h2>
+        <h2 class="text-2xl font-bold text-white text-center">
+          Profile Card
+        </h2>
         <ExampleProfileCard />
       </div>
 
       <div class="space-y-4">
-        <h2 class="text-2xl font-bold text-white text-center">Feature Grid</h2>
+        <h2 class="text-2xl font-bold text-white text-center">
+          Feature Grid
+        </h2>
         <ExampleFeatureGrid />
       </div>
 
       <div class="space-y-4">
-        <h2 class="text-2xl font-bold text-white text-center">Pricing Card</h2>
+        <h2 class="text-2xl font-bold text-white text-center">
+          Pricing Card
+        </h2>
         <ExamplePricingCard />
       </div>
 
