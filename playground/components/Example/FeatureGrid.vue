@@ -11,11 +11,11 @@
             class="h-full glow:ring-1 glow:border-glow glow:ring-glow glow:bg-glow/[.15] border-2 border-gray-700 rounded-xl p-6"
           >
             <div
-              :class="`w-12 h-12 bg-${feature.colorClass}/20 rounded-lg flex items-center justify-center mb-4`"
+              :class="`w-12 h-12 ${feature.bgClass} rounded-lg flex items-center justify-center mb-4`"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                :class="`h-6 w-6 text-${feature.colorClass}`"
+                :class="`h-6 w-6 ${feature.fgClass}`"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -47,22 +47,25 @@ const features = [
     title: 'Lightning Fast',
     description: 'Optimized performance for the best user experience',
     color: '#3B82F6',
-    colorClass: 'blue-500',
-    icon: 'M13 10V3L4 14h7v7l9-11h-7z'
+    fgClass: 'text-blue-500',
+    bgClass: 'bg-blue-500/20',
+    icon: 'M13 10V3L4 14h7v7l9-11h-7z',
   },
   {
     title: 'Secure',
     description: 'Enterprise-grade security for your peace of mind',
     color: '#10B981',
-    colorClass: 'green-500',
-    icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z'
+    fgClass: 'text-green-500',
+    bgClass: 'bg-green-500/20',
+    icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
   },
   {
     title: 'Reliable',
     description: '99.9% uptime guarantee for your business',
     color: '#F59E0B',
-    colorClass: 'yellow-500',
-    icon: 'M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15'
-  }
+    fgClass: 'text-yellow-500',
+    bgClass: 'bg-yellow-500/20',
+    icon: 'M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15',
+  },
 ]
 </script>
