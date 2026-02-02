@@ -13,6 +13,9 @@ node_modules
 **/.yarn/cache
 **/.yarn/*state*
 
+# pnpm
+.pnpm-store
+
 # Generated dirs
 dist
 
@@ -54,3 +57,5 @@ coverage
 Network Trash Folder
 Temporary Items
 .apdisk
+
+playground/.data

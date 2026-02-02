@@ -7,7 +7,7 @@ export default defineNuxtModule<ModuleOptions>({
     name: "nuxt-glow",
     configKey: "nuxtGlow",
     compatibility: {
-      nuxt: ">=3.0.0",
+      nuxt: ">=3.10.0",
     },
   },
   defaults: {},
