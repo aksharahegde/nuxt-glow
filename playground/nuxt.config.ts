@@ -1,5 +1,5 @@
 export default defineNuxtConfig({
-  modules: ['../src/module', '@nuxt/content', '@nuxtjs/tailwindcss', '@nuxthub/core'],
+  modules: ['../src/module', '@nuxt/content', '@nuxtjs/tailwindcss', '@nuxthub/core', 'nuxt-mcp'],
   devtools: { enabled: true },
   compatibilityDate: '2024-12-25',
   content: {
