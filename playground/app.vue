@@ -8,6 +8,8 @@
 </template>
 
 <style>
+@reference "tailwindcss";
+
 body {
   @apply bg-gray-900;
 }

@@ -62,6 +62,8 @@ module.exports = {
 }
 ```
 
+Tailwind CSS v4 is supported with the same plugin export.
+
 As with all colors in Tailwind, you may add opacity by appending a percentage after the color, such as `bg-glow/20` for 20% opacity.
 
 ## Contributing 🙏
