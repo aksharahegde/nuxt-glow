@@ -10,13 +10,12 @@
   "devDependencies": {
     "@nuxthub/core": "^0.10.8",
     "@nuxtjs/tailwindcss": "7.0.0-beta.1",
-    "@tailwindcss/typography": "^0.5.16",
+    "@tailwindcss/typography": "^0.5.20",
     "nuxt": "^4.5.1",
-    "nuxt-mcp": "^0.2.6",
-    "wrangler": "^4.6.0"
+    "wrangler": "^4.123.0"
   },
   "dependencies": {
-    "@nuxt/content": "^3.4.0",
+    "@nuxt/content": "^3.15.2",
     "better-sqlite3": "^11.0.0"
   }
 }
