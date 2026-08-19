@@ -73,6 +73,19 @@ module.exports = {
 
 As with all colors in Tailwind, you may add opacity by appending a percentage after the color, such as `bg-glow/20` for 20% opacity.
 
+## DevTools v4 (optional)
+
+Nuxt ships with DevTools enabled, but this repo can opt into DevTools v4 (alpha) for development.
+
+In your `pnpm-workspace.yaml`, add an override:
+
+```yaml
+overrides:
+  '@nuxt/devtools': 'npm:@nuxt/devtools-nightly@latest'
+```
+
+DevTools v4 requires Vite 8. After changing overrides, reinstall dependencies (delete `pnpm-lock.yaml` if needed).
+
 ## Contributing 🙏
 
 1. Clone this repository
