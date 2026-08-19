@@ -1,0 +1,5 @@
+@custom-variant glow (.glow-capture [glow] &);
+
+@theme inline {
+  --color-glow: var(--glow-color);
+}
