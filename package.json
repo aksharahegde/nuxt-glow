@@ -20,8 +20,7 @@
       "types": "./dist/module.d.mts",
       "import": "./dist/module.mjs"
     },
-    "./tailwind.css": "./src/runtime/tailwind.css",
-    "./tailwind": "./src/runtime/tailwind.js"
+    "./tailwind.css": "./src/runtime/tailwind.css"
   },
   "main": "./dist/module.mjs",
   "files": [
