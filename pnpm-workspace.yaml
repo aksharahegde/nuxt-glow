@@ -1,6 +1,9 @@
 packages:
   - 'playground'
 
+overrides:
+  '@nuxt/devtools': 'npm:@nuxt/devtools-nightly@4.0.0-alpha.11-29785376.9208bfc'
+
 allowBuilds:
   '@parcel/watcher': true
   better-sqlite3: true
@@ -16,3 +19,21 @@ onlyBuiltDependencies:
   - better-sqlite3
   - sharp
   - workerd
+
+minimumReleaseAgeExclude:
+  - '@devframes/hub-ui@0.9.2'
+  - '@devframes/hub@0.9.2'
+  - '@devframes/json-render-ui@0.9.2'
+  - '@devframes/json-render@0.9.2'
+  - '@devframes/plugin-code-server@0.9.2'
+  - '@devframes/plugin-data-inspector@0.9.2'
+  - '@devframes/plugin-inspect@0.9.2'
+  - '@devframes/plugin-messages@0.9.2'
+  - '@devframes/plugin-terminals@0.9.2'
+  - '@devframes/service-open@0.9.2'
+  - '@devframes/vite@0.9.2'
+  - '@nuxt/devtools-kit-nightly@4.0.0-alpha.11-29785376.9208bfc'
+  - '@nuxt/devtools-nightly@4.0.0-alpha.11-29785376.9208bfc'
+  - '@vitejs/devtools-kit@0.5.0'
+  - '@vitejs/devtools@0.5.0'
+  - devframe@0.9.2
