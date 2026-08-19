@@ -50,7 +50,16 @@ You can pass any valid CSS color, including `hsl()` values etc.
 Of course, you might choose to use any other color; you can leave out the `color` prop entirely.
 
 ## Tailwind
-Add the tailwind plugin to unlock the `glow:` variant and `glow` color
+
+The module registers the `glow:` variant and `glow` color automatically when you use Nuxt Glow with Tailwind CSS v4.
+
+For manual setup, import the CSS extension in your main stylesheet:
+
+```css
+@import "@aksharahegde/nuxt-glow/tailwind.css";
+```
+
+For Tailwind CSS v3, use the legacy JS plugin:
 
 `tailwind.config.js`
 ```js

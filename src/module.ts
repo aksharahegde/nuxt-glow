@@ -1,4 +1,5 @@
-import { defineNuxtModule, addComponent, createResolver, installModule } from "@nuxt/kit";
+import { readFileSync } from "node:fs";
+import { defineNuxtModule, addComponent, createResolver, installModule, addVitePlugin } from "@nuxt/kit";
 
 export type ModuleOptions = object;
 
@@ -11,31 +12,37 @@ export default defineNuxtModule<ModuleOptions>({
     },
   },
   defaults: {},
-  async setup() {
+  async setup(_options, _nuxt) {
     const resolver = createResolver(import.meta.url);
+    const glowCssPath = resolver.resolve("./runtime/tailwind.css");
+    const glowCss = readFileSync(glowCssPath, "utf-8");
 
-    await installModule('@nuxtjs/tailwindcss', {
-      exposeConfig: true,
-      config: {
-        darkMode: 'class',
-        content: {
-          files: [
-            resolver.resolve('./runtime/components/**/*.{vue,mjs,ts}'),
-            resolver.resolve('./runtime/*.{mjs,js,ts}')
-          ]
-        }
-      }
-    })
+    addVitePlugin(
+      {
+        name: "nuxt-glow:tailwind",
+        enforce: "pre",
+        transform(code, _id) {
+          if (!code.includes('@import "tailwindcss"') || code.includes("nuxt-glow/tailwind")) {
+            return;
+          }
+
+          return `${code}\n/* nuxt-glow/tailwind */\n${glowCss}`;
+        },
+      },
+      { client: true, server: true },
+    );
+
+    await installModule("@nuxtjs/tailwindcss");
 
     addComponent({
       name: "GlowCapture",
       filePath: resolver.resolve("runtime/components/GlowCapture.vue"),
-      global: true
+      global: true,
     });
     addComponent({
       name: "GlowElement",
       filePath: resolver.resolve("runtime/components/GlowElement.vue"),
-      global: true
+      global: true,
     });
   },
 });
