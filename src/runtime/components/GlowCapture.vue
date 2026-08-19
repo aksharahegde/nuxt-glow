@@ -31,8 +31,10 @@ const elementParent = ref<HTMLElement | null>(null);
 const move = (e: PointerEvent) => {
   if (e.pointerType === "mouse") {
     requestAnimationFrame(() => {
-      elementParent.value?.style.setProperty("--glow-x", `${e.layerX}px`);
-      elementParent.value?.style.setProperty("--glow-y", `${e.layerY}px`);
+      if (!elementParent.value) return;
+      const rect = elementParent.value.getBoundingClientRect();
+      elementParent.value.style.setProperty("--glow-x", `${e.clientX - rect.left}px`);
+      elementParent.value.style.setProperty("--glow-y", `${e.clientY - rect.top}px`);
     });
   }
 };
