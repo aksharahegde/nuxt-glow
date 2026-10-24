@@ -1,9 +1,10 @@
 import { readFileSync } from "node:fs";
+import type { NuxtModule } from "@nuxt/schema";
 import { defineNuxtModule, addComponent, createResolver, installModule, addVitePlugin } from "@nuxt/kit";
 
 export type ModuleOptions = object;
 
-export default defineNuxtModule<ModuleOptions>({
+const _module: NuxtModule<ModuleOptions> = defineNuxtModule<ModuleOptions>({
   meta: {
     name: "nuxt-glow",
     configKey: "nuxtGlow",
@@ -46,3 +47,5 @@ export default defineNuxtModule<ModuleOptions>({
     });
   },
 });
+
+export default _module;
