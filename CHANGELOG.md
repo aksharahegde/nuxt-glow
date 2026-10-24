@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v2.0.1
+
+[compare changes](https://github.com/aksharahegde/nuxt-glow/compare/v2.0.0...v2.0.1)
+
+### 🏡 Chore
+
+- Upgrade dependencies and fix module d.ts build ([#19](https://github.com/aksharahegde/nuxt-glow/pull/19))
+
+### ❤️ Contributors
+
+- Akshara Hegde <akshara.dt@gmail.com>
+
 ## v2.0.0
 
 [compare changes](https://github.com/aksharahegde/nuxt-glow/compare/v1.3.0...v2.0.0)
