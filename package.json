@@ -50,22 +50,22 @@
     "test:watch": "vitest watch"
   },
   "dependencies": {
-    "@nuxt/kit": "^4.6.2"
+    "@nuxt/kit": "^4.6.4"
   },
   "devDependencies": {
-    "@nuxt/devtools": "npm:@nuxt/devtools-nightly@4.0.0-beta.7-29878936.6ea436d",
+    "@nuxt/devtools": "npm:@nuxt/devtools-nightly@4.1.0-29896092.d46936e",
     "@nuxt/eslint-config": "^1.17.0",
     "@nuxt/module-builder": "^1.0.3",
-    "@nuxt/schema": "^4.6.2",
+    "@nuxt/schema": "^4.6.4",
     "@nuxt/test-utils": "^4.3.4",
     "@nuxtjs/tailwindcss": "7.0.0-beta.1",
-    "@tailwindcss/postcss": "^4.3.3",
-    "@types/node": "^26.6.5",
+    "@tailwindcss/postcss": "^4.3.4",
+    "@types/node": "^26.6.6",
     "changelogen": "^0.6.2",
-    "eslint": "^10.13.0",
-    "nuxt": "^4.6.2",
-    "tailwindcss": "^4.3.3",
-    "vitest": "^5.0.5",
-    "vue-tsc": "^3.3.13"
+    "eslint": "^10.14.0",
+    "nuxt": "^4.6.4",
+    "tailwindcss": "^4.3.4",
+    "vitest": "^5.1.0",
+    "vue-tsc": "^3.3.14"
   }
 }
